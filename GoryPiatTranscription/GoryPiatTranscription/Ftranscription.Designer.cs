@@ -1,6 +1,6 @@
 ﻿namespace GoryPiatTranscription
 {
-    partial class Form1
+    partial class Ftranscription
     {
         /// <summary>
         /// Required designer variable.

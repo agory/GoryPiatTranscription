@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GoryPiatTranscription
 {
-    public partial class Form1 : Form
+    public partial class Ftranscription : Form
     {
-        public Form1()
+        public Ftranscription()
         {
             InitializeComponent();
         }
