@@ -16,5 +16,33 @@ namespace GoryPiatTranscription
         {
             InitializeComponent();
         }
+
+        private void btResetDecrypt_Click(object sender, EventArgs e)
+        {
+            tbPasswordDecrypt.Text = "";
+            tbTextDecrypt.Text = "";
+
+        }
+
+        private void btValidationDecrypt_Click(object sender, EventArgs e)
+        {
+            String pasword = tbPasswordDecrypt.Text;
+            String text = tbTextDecrypt.Text;
+
+            // TODO Crypt(password,text)
+        }
+
+        private void btResetEncrypt_Click(object sender, EventArgs e)
+        {
+            tbPasswordEncrypt.Text = "";
+            tbTextEncrypt.Text = "";
+        }
+
+        private void btValidationEncrypt_Click(object sender, EventArgs e)
+        {
+            String pasword = tbPasswordEncrypt.Text;
+            String text = tbTextEncrypt.Text;
+            // TODO Crypt(password,text)
+        }
     }
 }
