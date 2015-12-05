@@ -28,8 +28,10 @@ namespace GoryPiatTranscription
         {
             String pasword = tbPasswordDecrypt.Text;
             String text = tbTextDecrypt.Text;
+            // TODO Decrypt(password,text)
+            Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
+            fshow.Show();
 
-            // TODO Crypt(password,text)
         }
 
         private void btResetEncrypt_Click(object sender, EventArgs e)
@@ -42,7 +44,9 @@ namespace GoryPiatTranscription
         {
             String pasword = tbPasswordEncrypt.Text;
             String text = tbTextEncrypt.Text;
-            // TODO Crypt(password,text)
+            // TODO ENCrypt(password,text)
+            Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
+            fshow.Show();
         }
     }
 }

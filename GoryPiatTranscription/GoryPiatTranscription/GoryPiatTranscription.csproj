@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fshow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fshow.Designer.cs">
+      <DependentUpon>Fshow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ftranscription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Fshow.resx">
+      <DependentUpon>Fshow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ftranscription.resx">
       <DependentUpon>Ftranscription.cs</DependentUpon>
     </EmbeddedResource>
