@@ -81,7 +81,7 @@
             this.btResetEncrypt.Location = new System.Drawing.Point(448, 356);
             this.btResetEncrypt.Name = "btResetEncrypt";
             this.btResetEncrypt.Size = new System.Drawing.Size(143, 29);
-            this.btResetEncrypt.TabIndex = 7;
+            this.btResetEncrypt.TabIndex = 4;
             this.btResetEncrypt.Text = "Reset";
             this.btResetEncrypt.UseVisualStyleBackColor = true;
             this.btResetEncrypt.Click += new System.EventHandler(this.btResetEncrypt_Click);
@@ -92,7 +92,7 @@
             this.btValidationEncrypt.Location = new System.Drawing.Point(597, 356);
             this.btValidationEncrypt.Name = "btValidationEncrypt";
             this.btValidationEncrypt.Size = new System.Drawing.Size(143, 29);
-            this.btValidationEncrypt.TabIndex = 8;
+            this.btValidationEncrypt.TabIndex = 3;
             this.btValidationEncrypt.Text = "Valider";
             this.btValidationEncrypt.UseVisualStyleBackColor = true;
             this.btValidationEncrypt.Click += new System.EventHandler(this.btValidationEncrypt_Click);
@@ -106,7 +106,7 @@
             this.tbTextEncrypt.Multiline = true;
             this.tbTextEncrypt.Name = "tbTextEncrypt";
             this.tbTextEncrypt.Size = new System.Drawing.Size(675, 282);
-            this.tbTextEncrypt.TabIndex = 6;
+            this.tbTextEncrypt.TabIndex = 1;
             // 
             // lbPassword2
             // 
@@ -136,7 +136,7 @@
             this.tbPasswordEncrypt.Location = new System.Drawing.Point(129, 321);
             this.tbPasswordEncrypt.Name = "tbPasswordEncrypt";
             this.tbPasswordEncrypt.Size = new System.Drawing.Size(552, 20);
-            this.tbPasswordEncrypt.TabIndex = 3;
+            this.tbPasswordEncrypt.TabIndex = 2;
             // 
             // tpDecrypt
             // 
@@ -160,7 +160,7 @@
             this.btResetDecrypt.Location = new System.Drawing.Point(448, 356);
             this.btResetDecrypt.Name = "btResetDecrypt";
             this.btResetDecrypt.Size = new System.Drawing.Size(143, 29);
-            this.btResetDecrypt.TabIndex = 3;
+            this.btResetDecrypt.TabIndex = 4;
             this.btResetDecrypt.Text = "Reset";
             this.btResetDecrypt.UseVisualStyleBackColor = true;
             this.btResetDecrypt.Click += new System.EventHandler(this.btResetDecrypt_Click);
@@ -185,7 +185,7 @@
             this.tbTextDecrypt.Multiline = true;
             this.tbTextDecrypt.Name = "tbTextDecrypt";
             this.tbTextDecrypt.Size = new System.Drawing.Size(691, 281);
-            this.tbTextDecrypt.TabIndex = 2;
+            this.tbTextDecrypt.TabIndex = 1;
             // 
             // lbPassword
             // 
@@ -215,7 +215,7 @@
             this.tbPasswordDecrypt.Location = new System.Drawing.Point(127, 320);
             this.tbPasswordDecrypt.Name = "tbPasswordDecrypt";
             this.tbPasswordDecrypt.Size = new System.Drawing.Size(570, 20);
-            this.tbPasswordDecrypt.TabIndex = 0;
+            this.tbPasswordDecrypt.TabIndex = 2;
             // 
             // Ftranscription
             // 

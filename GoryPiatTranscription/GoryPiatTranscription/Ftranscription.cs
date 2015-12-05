@@ -34,8 +34,8 @@ namespace GoryPiatTranscription
 
         private void btResetEncrypt_Click(object sender, EventArgs e)
         {
-            tbPasswordEncrypt.Text = "";
-            tbTextEncrypt.Text = "";
+            tbPasswordEncrypt.Clear();
+            tbTextEncrypt.Clear();
         }
 
         private void btValidationEncrypt_Click(object sender, EventArgs e)

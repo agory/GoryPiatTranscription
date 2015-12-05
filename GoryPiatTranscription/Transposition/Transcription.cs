@@ -17,6 +17,7 @@ namespace Transposition
 
         public static int[] computeTranspoSequence(String myKey)
         {
+            myKey = "ISTIL";
             int nbChar = 0;
             int sizeTab = myKey.Length;
             int[] myTranspoSequence = new int[sizeTab];
