@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,5 +49,41 @@ namespace GoryPiatTranscription
             Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
             fshow.Show();
         }
+
+        private void btOpenEncrypt_Click(object sender, EventArgs e)
+        {
+            tbTextEncrypt.Text = openFile();
+        }
+
+        private void btOpenDecrypt_Click(object sender, EventArgs e)
+        {
+            tbTextDecrypt.Text = openFile();
+        }
+
+        private String openFile() {
+            string content = "";
+            FileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Fichiers texte|*.txt|Tous les fichiers|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog.FileName;
+                File file = new File(path);
+                try
+                {
+                    content= file.read();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Une erreur est survenue lors de l'écriture du fichier: {0}.", ex.Message);
+                }
+
+            }
+            return content;
+        }
+
     }
 }

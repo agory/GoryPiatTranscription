@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoryPiatTranscription", "GoryPiatTranscription\GoryPiatTranscription.csproj", "{B9FE1AC9-6339-481F-B1B4-42108D749636}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transposition", "Transposition\Transposition.csproj", "{CE3304BF-FEFA-4583-ABB2-8BFE32EB4C3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileLib", "FileLib\FileLib.csproj", "{542654BA-39AB-44F0-B510-F586CF2AF0F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CE3304BF-FEFA-4583-ABB2-8BFE32EB4C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3304BF-FEFA-4583-ABB2-8BFE32EB4C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3304BF-FEFA-4583-ABB2-8BFE32EB4C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542654BA-39AB-44F0-B510-F586CF2AF0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542654BA-39AB-44F0-B510-F586CF2AF0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542654BA-39AB-44F0-B510-F586CF2AF0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542654BA-39AB-44F0-B510-F586CF2AF0F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="btOpenEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="btResetEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -126,10 +129,10 @@
   <metadata name="tbTextEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="lbPassword2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="lbPasswordEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="lbText2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="lbTextEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="tbPasswordEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -160,8 +163,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD4
-        CAAAAk1TRnQBSQFMAgEBAgEAAQgBAAEIAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADw
+        CAAAAk1TRnQBSQFMAgEBAgEAASgBAAEoAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -194,12 +197,33 @@
         BQkC3AO0AvQBtAHbAtwFCQLcA7QB9CAAAfQCtAHbAQkGGQEJA7QC9AK0AdsBCQYZAQkDtAH0IAAB9AO0
         B/8BGQO0AvQDtAf/ARkDtAH0IAAB9AO0B/8BGQK0AbMC9AO0B/8BGQK0AbMB9CAAAfQDtAf/Ad0CtAGz
         AvQDtAf/Ad0CtAGzAfQgAAH0AbMCtAf/Ad0CtAGtAvQBswK0B/8B3QG0AbMBrQH0IAAB9AGzArQBCQH0
-        AfUCGQH/AfQBCQG0AbMBrQL0AbMCtAEJBBkB/wH0AQkDtAH0IAAB9AGzA7QB3QEZAboBtAH1Ad0DtAGt
-        AvQBswe0Af8B3QK0AfQBCQH0IAAB9AGtA7QBCQEZAdwBtAH1Ad0DtAGzAvQBrQe0Af8B3QG0AdsB9AEJ
-        AfQgAAH0AbMDtAEJAf8C9QH/AQkBugLbAbQC9AGzB7QBGQH/AfUB/wHzAbQB9CAAAfQGtAIJAbQE3AG0
-        AvQEtAK6AdsCtAG1AgkBtAHcAfQgAAH0AbQC2wPcArQC3AMJAdwC9AG0AtsH3AG0AdwCCQH0IQAB3QcJ
-        Ad0FGQH0AQAB3QcJAd0FGQH0YAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGAFwAD/wEA
-        AYABAAGAbQABgAEAAYAFAAT/BAAL
+        Af8CGQH/AfQBCQG0AbMBrQL0AbMCtAEJBBkB/wH0AQkDtAH0IAAB9AGzA7QB3QEZAboBtAH/Ad0DtAGt
+        AvQBswe0Af8B3QK0AfQBCQH0IAAB9AGtA7QBCQEZAdwBtAH/Ad0DtAGzAvQBrQe0Af8B3QG0AdsB9AEJ
+        AfQgAAH0AbMDtAEJBP8BCQG6AtsBtAL0AbMHtAEZA/8B8wG0AfQgAAH0BrQCCQG0BNwBtAL0BLQCugHb
+        ArQBtQIJAbQB3AH0IAAB9AG0AtsD3AK0AtwDCQHcAvQBtALbB9wBtAHcAgkB9CEAAd0HCQHdBRkB9AEA
+        Ad0HCQHdBRkB9GAAAUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcAA/8BAAGAAQABgG0A
+        AYABAAGABQAE/wQACw==
 </value>
   </data>
+  <metadata name="btOpenEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btResetEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btValidationEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbTextEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lbPasswordEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lbTextEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbPasswordEncrypt.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
