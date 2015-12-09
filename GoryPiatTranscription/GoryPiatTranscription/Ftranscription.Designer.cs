@@ -148,7 +148,7 @@
             this.lbTextEncrypt.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextEncrypt.Location = new System.Drawing.Point(8, 5);
             this.lbTextEncrypt.Name = "lbTextEncrypt";
-            this.lbTextEncrypt.Size = new System.Drawing.Size(53, 25);
+            this.lbTextEncrypt.Size = new System.Drawing.Size(51, 25);
             this.lbTextEncrypt.TabIndex = 6;
             this.lbTextEncrypt.Text = "Texte";
             // 
@@ -240,7 +240,7 @@
             this.lbTexte.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTexte.Location = new System.Drawing.Point(8, 5);
             this.lbTexte.Name = "lbTexte";
-            this.lbTexte.Size = new System.Drawing.Size(53, 25);
+            this.lbTexte.Size = new System.Drawing.Size(51, 25);
             this.lbTexte.TabIndex = 1;
             this.lbTexte.Text = "Texte";
             // 
@@ -269,6 +269,7 @@
             this.MinimumSize = new System.Drawing.Size(336, 238);
             this.Name = "Ftranscription";
             this.Text = "Transcription";
+            this.Load += new System.EventHandler(this.Ftranscription_Load);
             this.tcTranscription.ResumeLayout(false);
             this.tpEncrypt.ResumeLayout(false);
             this.tpEncrypt.PerformLayout();

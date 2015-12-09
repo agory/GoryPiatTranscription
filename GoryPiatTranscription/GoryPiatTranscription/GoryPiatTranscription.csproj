@@ -95,6 +95,10 @@
       <Project>{087ebcd9-f465-4ed7-b424-9ecc7e27dfe9}</Project>
       <Name>FIleLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Transposition\Transposition.csproj">
+      <Project>{ce3304bf-fefa-4583-abb2-8bfe32eb4c3b}</Project>
+      <Name>Transposition</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

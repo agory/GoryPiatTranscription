@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transposition;
 
 namespace GoryPiatTranscription
 {
@@ -83,6 +84,24 @@ namespace GoryPiatTranscription
 
             }
             return content;
+        }
+
+        private void Ftranscription_Load(object sender, EventArgs e)
+        {
+            Transcription maTranscription = new Transcription();
+            Dictionary<int, int> transpo = maTranscription.computeTranspoSequence("ISTIL");
+            MessageBox.Show(transpo[0].ToString() + " - " + transpo[1].ToString() + " - " + transpo[2].ToString() + " - " + transpo[3].ToString() + " - " + transpo[4].ToString() + " - ");
+            /*            
+            int[] transpoSeqTest = Transcription.computeTranspoSequence("istil");
+            String transpo = "";
+            for(int i=0;i<transpoSeqTest.Count();++i){
+                transpo += transpoSeqTest[i].ToString();
+            }
+
+            MessageBox.Show(transpo);
+            int valueChar = Convert.ToInt16('B');
+            MessageBox.Show(valueChar.ToString());
+             */
         }
 
     }

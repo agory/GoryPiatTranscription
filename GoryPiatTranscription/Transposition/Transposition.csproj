@@ -42,6 +42,12 @@
     <Compile Include="Transcription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FIleLib\FIleLib.csproj">
+      <Project>{087ebcd9-f465-4ed7-b424-9ecc7e27dfe9}</Project>
+      <Name>FIleLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

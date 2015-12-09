@@ -11,32 +11,67 @@ namespace Transposition
         private String cleartext; // Decrypted text
         private String cyphertext; // Encrypted Text
         private String myKey; //Key chosen by the user
+        private int lineLenght = 0; // Size of the key
         private int[] transpoSequence; // Sequence of transposition
-        private static char[] ALPHABET = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                                      'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}; //Alphabet to compare
 
-        public static int[] computeTranspoSequence(String myKey)
+        public Transcription()
         {
+            //Dictionary<int, int> transpo = computeTranspoSequence("ISTIL");
+        }
+        //public static int[] computeTranspoSequence(String myKey)
+        public Dictionary<int, int> computeTranspoSequence(String myKey)
+        {
+            myKey = "ISTIL";
             int nbChar = 0;
             int sizeTab = myKey.Length;
-            int[] myTranspoSequence = new int[sizeTab];
+            //int[] myTranspoSequence = new int[sizeTab];
+            Dictionary<int, int> transpoSequence = new Dictionary<int, int>();
             char currentAlphaChar;
             char currentKeyChar;
+            int currentValueChar = 0;
+            int maxValueChar = 0;
+            int minValueChar = 1000;
+            int indexOfKey = 0;
+            int rankOfKey = 0;
 
-            for (int i = 0; i < ALPHABET.Length; ++i)
+            for (int j = 0; j < myKey.Count(); ++j)
+            {
+                for (int i = 0; i < myKey.Count(); ++i)
+                {
+                    currentValueChar = Convert.ToInt16(myKey[i]);
+                    if ((currentValueChar < minValueChar) && !transpoSequence.ContainsKey(i))
+                    {
+                        minValueChar = currentValueChar;
+                        indexOfKey = i;
+                    }
+                }
+                transpoSequence.Add(indexOfKey, rankOfKey);
+                rankOfKey++;
+                minValueChar = 1000;
+            }
+            return transpoSequence;
+
+
+
+
+            /*for (int i = 0; i < ALPHABET.Length; ++i)
             {
                 currentAlphaChar=ALPHABET[i];
                 for (int j = 0; j < myKey.Length; ++j)
                 {
                     currentKeyChar = myKey[j];
-                    if (currentKeyChar.Equals(currentAlphaChar))
+                    if (currentKeyChar.Equals(currentAlphaChar)&&(nbChar==0))
                     {
-                        myTranspoSequence[i] = j;
+                        myTranspoSequence[j] = i;
                         nbChar++;
                     }
+                    else if (currentKeyChar.Equals(currentAlphaChar))
+                    {
+                        myTranspoSequence[j] = i+1;
+                    }
                 }
-            }
-            return myTranspoSequence;
+            }*/
+            //return myTranspoSequence;
         }
         /*
         public static int findIndexOfKey(String myKey){
