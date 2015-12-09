@@ -225,6 +225,7 @@
             this.Controls.Add(this.tcTranscription);
             this.Name = "Ftranscription";
             this.Text = "Transcription";
+            this.Load += new System.EventHandler(this.Ftranscription_Load);
             this.tcTranscription.ResumeLayout(false);
             this.tpEncrypt.ResumeLayout(false);
             this.tpEncrypt.PerformLayout();

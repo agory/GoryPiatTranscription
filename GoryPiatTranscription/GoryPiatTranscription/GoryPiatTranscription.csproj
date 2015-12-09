@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fshow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fshow.Designer.cs">
+      <DependentUpon>Fshow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ftranscription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Fshow.resx">
+      <DependentUpon>Fshow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ftranscription.resx">
       <DependentUpon>Ftranscription.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Transposition\Transposition.csproj">
+      <Project>{ce3304bf-fefa-4583-abb2-8bfe32eb4c3b}</Project>
+      <Name>Transposition</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

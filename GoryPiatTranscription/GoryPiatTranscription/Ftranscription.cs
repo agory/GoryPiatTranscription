@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transposition;
 
 namespace GoryPiatTranscription
 {
@@ -28,8 +29,10 @@ namespace GoryPiatTranscription
         {
             String pasword = tbPasswordDecrypt.Text;
             String text = tbTextDecrypt.Text;
+            // TODO Decrypt(password,text)
+            Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
+            fshow.Show();
 
-            // TODO Crypt(password,text)
         }
 
         private void btResetEncrypt_Click(object sender, EventArgs e)
@@ -42,7 +45,25 @@ namespace GoryPiatTranscription
         {
             String pasword = tbPasswordEncrypt.Text;
             String text = tbTextEncrypt.Text;
-            // TODO Crypt(password,text)
+            // TODO ENCrypt(password,text)
+            Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
+            fshow.Show();
+        }
+
+        private void Ftranscription_Load(object sender, EventArgs e)
+        {
+            Transcription maTranscription = new Transcription();
+            /*            
+            int[] transpoSeqTest = Transcription.computeTranspoSequence("istil");
+            String transpo = "";
+            for(int i=0;i<transpoSeqTest.Count();++i){
+                transpo += transpoSeqTest[i].ToString();
+            }
+
+            MessageBox.Show(transpo);
+            int valueChar = Convert.ToInt16('B');
+            MessageBox.Show(valueChar.ToString());
+             */
         }
     }
 }
