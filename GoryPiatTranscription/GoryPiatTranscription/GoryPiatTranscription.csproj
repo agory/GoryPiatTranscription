@@ -91,9 +91,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FileLib\FileLib.csproj">
-      <Project>{542654ba-39ab-44f0-b510-f586cf2af0f2}</Project>
-      <Name>FileLib</Name>
+    <ProjectReference Include="..\FIleLib\FIleLib.csproj">
+      <Project>{087ebcd9-f465-4ed7-b424-9ecc7e27dfe9}</Project>
+      <Name>FIleLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
