@@ -11,17 +11,17 @@ namespace Transposition
         private String cleartext; // Decrypted text
         private String cyphertext; // Encrypted Text
         private String myKey; //Key chosen by the user
-        private int lineLenght = 0; // Size of the key
-        private int[] transpoSequence; // Sequence of transposition
 
-        public Transcription()
+        public Transcription(String cleartext, String myKey)
         {
-            //Dictionary<int, int> transpo = computeTranspoSequence("ISTIL");
+            this.cleartext = cleartext;
+            this.myKey = myKey;
+            this.cyphertext="";
         }
-        //public static int[] computeTranspoSequence(String myKey)
-        public static Dictionary<int, int> computeTranspoSequence(String myKey)
+
+        //Compute the number of the columns on the tab.
+        public Dictionary<int, int> computeTranspoSequence()
         {
-            myKey = "ISTIL";
             int sizeTab = myKey.Length;
             Dictionary<int, int> transpoSequence = new Dictionary<int, int>();
             int currentValueChar = 0;
@@ -47,12 +47,13 @@ namespace Transposition
             return transpoSequence;
         }
 
-        public static Dictionary<int, String> computeTab(String clearText, String myKey){
+        // To compute the tab of chars with number of columns
+        public Dictionary<int, String> computeTab(){
             Dictionary<int, String> myTab = new Dictionary<int, String>();
-            Dictionary<int, int> myTranspo = computeTranspoSequence(myKey);
+            Dictionary<int, int> myTranspo = computeTranspoSequence();
             int[] orderSequence = new int[0];
             int sizeKey = myKey.Length;
-            int sizeClearText = clearText.Length;
+            int sizeClearText = cleartext.Length;
             String oldText = "";
             
             for (int i = 0; i < myKey.Length; ++i)
@@ -62,17 +63,18 @@ namespace Transposition
 
             for (int i = 0; i < myKey.Length; ++i)
             {
-                for (int j = i; j < clearText.Length; j+=sizeKey)
+                for (int j = i; j < cleartext.Length; j+=sizeKey)
                 {
                     oldText = myTab[myTranspo[i]];
-                    myTab[myTranspo[i]] = oldText + clearText[j]+"";
+                    myTab[myTranspo[i]] = oldText + cleartext[j]+"";
                 }
             }
-                
                 return myTab;
         }
 
-        public static String computeCyphertext(Dictionary<int, String> myTab, String myKey)
+        //To compute the cyphertext thanks to the tab of chars computed above.
+        //It takes the tab of chars and the key in input.
+        public String computeCyphertext(Dictionary<int, String> myTab)
         {
             int sizeOfKey = myKey.Length;
             String cypherText = "";
@@ -84,11 +86,12 @@ namespace Transposition
             return cypherText;
         }
 
-        public static String encrypt(String clearText, String myKey){
-            String cypherText = "";
-            Dictionary<int, String> charTab = computeTab(clearText, myKey);
-            cypherText = computeCyphertext(charTab, myKey);
-            return cypherText;
+        //Encryption of the cleartext on input, with the key. Returns a String.
+        public String encrypt(){
+            this.cyphertext = "";
+            Dictionary<int, String> charTab = computeTab();
+            this.cyphertext = computeCyphertext(charTab);
+            return this.cyphertext;
     }
     }
 }

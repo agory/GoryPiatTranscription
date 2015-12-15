@@ -48,7 +48,8 @@ namespace GoryPiatTranscription
             {
                 String key = tbPasswordEncrypt.Text;
                 String cleartext = tbTextEncrypt.Text;
-                String cypher = Transcription.encrypt(tbTextEncrypt.Text, tbPasswordEncrypt.Text);
+                Transcription myTranscription = new Transcription(cleartext, key);
+                String cypher = myTranscription.encrypt();
                 // TODO ENCrypt(password,text)
                 Form fshow = new Fshow(cypher);
                 fshow.Show();
