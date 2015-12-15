@@ -104,7 +104,7 @@
             this.btResetEncrypt.Location = new System.Drawing.Point(295, 329);
             this.btResetEncrypt.Name = "btResetEncrypt";
             this.btResetEncrypt.Size = new System.Drawing.Size(143, 29);
-            this.btResetEncrypt.TabIndex = 8;
+            this.btResetEncrypt.TabIndex = 3;
             this.btResetEncrypt.Text = "Reset";
             this.btResetEncrypt.UseVisualStyleBackColor = true;
             this.btResetEncrypt.Click += new System.EventHandler(this.btResetEncrypt_Click);
@@ -115,7 +115,7 @@
             this.btValidationEncrypt.Location = new System.Drawing.Point(444, 329);
             this.btValidationEncrypt.Name = "btValidationEncrypt";
             this.btValidationEncrypt.Size = new System.Drawing.Size(143, 29);
-            this.btValidationEncrypt.TabIndex = 9;
+            this.btValidationEncrypt.TabIndex = 2;
             this.btValidationEncrypt.Text = "Valider";
             this.btValidationEncrypt.UseVisualStyleBackColor = true;
             this.btValidationEncrypt.Click += new System.EventHandler(this.btValidationEncrypt_Click);
@@ -129,7 +129,7 @@
             this.tbTextEncrypt.Multiline = true;
             this.tbTextEncrypt.Name = "tbTextEncrypt";
             this.tbTextEncrypt.Size = new System.Drawing.Size(579, 254);
-            this.tbTextEncrypt.TabIndex = 7;
+            this.tbTextEncrypt.TabIndex = 0;
             // 
             // lbPasswordEncrypt
             // 
@@ -159,7 +159,7 @@
             this.tbPasswordEncrypt.Location = new System.Drawing.Point(127, 293);
             this.tbPasswordEncrypt.Name = "tbPasswordEncrypt";
             this.tbPasswordEncrypt.Size = new System.Drawing.Size(460, 22);
-            this.tbPasswordEncrypt.TabIndex = 4;
+            this.tbPasswordEncrypt.TabIndex = 1;
             // 
             // tpDecrypt
             // 
@@ -207,7 +207,7 @@
             this.btValidationDecrypt.Location = new System.Drawing.Point(444, 329);
             this.btValidationDecrypt.Name = "btValidationDecrypt";
             this.btValidationDecrypt.Size = new System.Drawing.Size(143, 29);
-            this.btValidationDecrypt.TabIndex = 3;
+            this.btValidationDecrypt.TabIndex = 2;
             this.btValidationDecrypt.Text = "Valider";
             this.btValidationDecrypt.UseVisualStyleBackColor = true;
             this.btValidationDecrypt.Click += new System.EventHandler(this.btValidationDecrypt_Click);
@@ -221,7 +221,7 @@
             this.tbTextDecrypt.Multiline = true;
             this.tbTextDecrypt.Name = "tbTextDecrypt";
             this.tbTextDecrypt.Size = new System.Drawing.Size(579, 254);
-            this.tbTextDecrypt.TabIndex = 2;
+            this.tbTextDecrypt.TabIndex = 0;
             // 
             // lbPassword
             // 
@@ -251,7 +251,7 @@
             this.tbPasswordDecrypt.Location = new System.Drawing.Point(127, 293);
             this.tbPasswordDecrypt.Name = "tbPasswordDecrypt";
             this.tbPasswordDecrypt.Size = new System.Drawing.Size(460, 22);
-            this.tbPasswordDecrypt.TabIndex = 0;
+            this.tbPasswordDecrypt.TabIndex = 1;
             // 
             // ilTranscription
             // 

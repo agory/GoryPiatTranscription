@@ -19,17 +19,12 @@ namespace Transposition
             //Dictionary<int, int> transpo = computeTranspoSequence("ISTIL");
         }
         //public static int[] computeTranspoSequence(String myKey)
-        public Dictionary<int, int> computeTranspoSequence(String myKey)
+        public static Dictionary<int, int> computeTranspoSequence(String myKey)
         {
             myKey = "ISTIL";
-            int nbChar = 0;
             int sizeTab = myKey.Length;
-            //int[] myTranspoSequence = new int[sizeTab];
             Dictionary<int, int> transpoSequence = new Dictionary<int, int>();
-            char currentAlphaChar;
-            char currentKeyChar;
             int currentValueChar = 0;
-            int maxValueChar = 0;
             int minValueChar = 1000;
             int indexOfKey = 0;
             int rankOfKey = 0;
@@ -50,39 +45,50 @@ namespace Transposition
                 minValueChar = 1000;
             }
             return transpoSequence;
-
-
-
-
-            /*for (int i = 0; i < ALPHABET.Length; ++i)
-            {
-                currentAlphaChar=ALPHABET[i];
-                for (int j = 0; j < myKey.Length; ++j)
-                {
-                    currentKeyChar = myKey[j];
-                    if (currentKeyChar.Equals(currentAlphaChar)&&(nbChar==0))
-                    {
-                        myTranspoSequence[j] = i;
-                        nbChar++;
-                    }
-                    else if (currentKeyChar.Equals(currentAlphaChar))
-                    {
-                        myTranspoSequence[j] = i+1;
-                    }
-                }
-            }*/
-            //return myTranspoSequence;
         }
-        /*
-        public static int findIndexOfKey(String myKey){
-            int index = -1;
+
+        public static Dictionary<int, String> computeTab(String clearText, String myKey){
+            Dictionary<int, String> myTab = new Dictionary<int, String>();
+            Dictionary<int, int> myTranspo = computeTranspoSequence(myKey);
+            int[] orderSequence = new int[0];
+            int sizeKey = myKey.Length;
+            int sizeClearText = clearText.Length;
+            String oldText = "";
             
-            return index;
+            for (int i = 0; i < myKey.Length; ++i)
+            {
+                myTab.Add((int)myTranspo[i], "");
+            }
+
+            for (int i = 0; i < myKey.Length; ++i)
+            {
+                for (int j = i; j < clearText.Length; j+=sizeKey)
+                {
+                    oldText = myTab[myTranspo[i]];
+                    myTab[myTranspo[i]] = oldText + clearText[j]+"";
+                }
+            }
+                
+                return myTab;
         }
-         * */
 
+        public static String computeCyphertext(Dictionary<int, String> myTab, String myKey)
+        {
+            int sizeOfKey = myKey.Length;
+            String cypherText = "";
+            for(int i = 0; i < sizeOfKey; ++i)
+            {
+                cypherText += myTab[i];
+            }
 
+            return cypherText;
+        }
 
-
+        public static String encrypt(String clearText, String myKey){
+            String cypherText = "";
+            Dictionary<int, String> charTab = computeTab(clearText, myKey);
+            cypherText = computeCyphertext(charTab, myKey);
+            return cypherText;
+    }
     }
 }

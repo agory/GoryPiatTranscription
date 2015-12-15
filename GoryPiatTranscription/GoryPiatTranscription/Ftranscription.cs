@@ -44,11 +44,19 @@ namespace GoryPiatTranscription
 
         private void btValidationEncrypt_Click(object sender, EventArgs e)
         {
-            String pasword = tbPasswordEncrypt.Text;
-            String text = tbTextEncrypt.Text;
-            // TODO ENCrypt(password,text)
-            Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
-            fshow.Show();
+            if((tbPasswordEncrypt.Text != "")&&(tbTextEncrypt.Text != ""))
+            {
+                String key = tbPasswordEncrypt.Text;
+                String cleartext = tbTextEncrypt.Text;
+                String cypher = Transcription.encrypt(tbTextEncrypt.Text, tbPasswordEncrypt.Text);
+                // TODO ENCrypt(password,text)
+                Form fshow = new Fshow(cypher);
+                fshow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Merci d'entrer un texte et une clé afin de procéder à l'encryptage");
+            }
         }
 
         private void btOpenEncrypt_Click(object sender, EventArgs e)
@@ -88,20 +96,8 @@ namespace GoryPiatTranscription
 
         private void Ftranscription_Load(object sender, EventArgs e)
         {
-            Transcription maTranscription = new Transcription();
-            Dictionary<int, int> transpo = maTranscription.computeTranspoSequence("ISTIL");
-            MessageBox.Show(transpo[0].ToString() + " - " + transpo[1].ToString() + " - " + transpo[2].ToString() + " - " + transpo[3].ToString() + " - " + transpo[4].ToString() + " - ");
-            /*            
-            int[] transpoSeqTest = Transcription.computeTranspoSequence("istil");
-            String transpo = "";
-            for(int i=0;i<transpoSeqTest.Count();++i){
-                transpo += transpoSeqTest[i].ToString();
-            }
-
-            MessageBox.Show(transpo);
-            int valueChar = Convert.ToInt16('B');
-            MessageBox.Show(valueChar.ToString());
-             */
+            tbTextEncrypt.Text = "L’ISTIL DEVIENT UNE ECOLE POLYTECHNIQUE ";
+            tbPasswordEncrypt.Text = "ISTIL";
         }
 
     }
