@@ -86,6 +86,7 @@ namespace Transposition
             return cypherText;
         }
 
+
         //Encryption of the cleartext on input, with the key. Returns a String.
         public String encrypt(){
             this.cyphertext = "";
