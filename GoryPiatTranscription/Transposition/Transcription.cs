@@ -59,7 +59,7 @@ namespace Transposition
             for (int i = 0; i < myKey.Length; ++i)
             {
                 myTab.Add((int)myTranspo[i], "");
-            }
+        }
 
             for (int i = 0; i < myKey.Length; ++i)
             {
