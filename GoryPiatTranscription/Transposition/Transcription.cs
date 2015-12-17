@@ -69,7 +69,7 @@ namespace Transposition
                     myTab[myTranspo[i]] = oldText + cleartext[j]+"";
                 }
             }
-                return myTab;
+            return myTab;
         }
 
         //To compute the cyphertext thanks to the tab of chars computed above.
@@ -92,6 +92,6 @@ namespace Transposition
             Dictionary<int, String> charTab = computeTab();
             this.cyphertext = computeCyphertext(charTab);
             return this.cyphertext;
-    }
+        }
     }
 }
