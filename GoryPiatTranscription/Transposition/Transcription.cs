@@ -11,70 +11,87 @@ namespace Transposition
         private String cleartext; // Decrypted text
         private String cyphertext; // Encrypted Text
         private String myKey; //Key chosen by the user
-        private int lineLenght = 0; // Size of the key
-        private int[] transpoSequence; // Sequence of transposition
-        
-        public Transcription()
+
+        public Transcription(String cleartext, String myKey)
         {
-            computeTranspoSequence("ISTIL");
+            this.cleartext = cleartext;
+            this.myKey = myKey;
+            this.cyphertext="";
         }
-        //public static int[] computeTranspoSequence(String myKey)
-        public void computeTranspoSequence(String myKey)
+
+        //Compute the number of the columns on the tab.
+        public Dictionary<int, int> computeTranspoSequence()
         {
-            myKey = "ISTIL";
-            int nbChar = 0;
             int sizeTab = myKey.Length;
-            //int[] myTranspoSequence = new int[sizeTab];
-            Dictionary<String, int> transpoSequence = new Dictionary<string, int>();
-            char currentAlphaChar;
-            char currentKeyChar;
+            Dictionary<int, int> transpoSequence = new Dictionary<int, int>();
             int currentValueChar = 0;
-            int maxValueChar = 0;
-            int minValueChar = 0;
+            int minValueChar = 1000;
             int indexOfKey = 0;
+            int rankOfKey = 0;
 
-            for (int i = 0; i < myKey.Count(); ++i)
+            for (int j = 0; j < myKey.Count(); ++j)
             {
-                currentValueChar = Convert.ToInt16(myKey[i]);
-                if (currentValueChar > maxValueChar)
+                for (int i = 0; i < myKey.Count(); ++i)
                 {
-                    maxValueChar = currentValueChar;
-                    indexOfKey = i;
+                    currentValueChar = Convert.ToInt16(myKey[i]);
+                    if ((currentValueChar < minValueChar) && !transpoSequence.ContainsKey(i))
+                    {
+                        minValueChar = currentValueChar;
+                        indexOfKey = i;
+                    }
                 }
-                transpoSequence.Add(myKey[i].ToString(), indexOfKey);
+                transpoSequence.Add(indexOfKey, rankOfKey);
+                rankOfKey++;
+                minValueChar = 1000;
+            }
+            return transpoSequence;
+        }
 
+        // To compute the tab of chars with number of columns
+        public Dictionary<int, String> computeTab(){
+            Dictionary<int, String> myTab = new Dictionary<int, String>();
+            Dictionary<int, int> myTranspo = computeTranspoSequence();
+            int[] orderSequence = new int[0];
+            int sizeKey = myKey.Length;
+            int sizeClearText = cleartext.Length;
+            String oldText = "";
+            
+            for (int i = 0; i < myKey.Length; ++i)
+            {
+                myTab.Add((int)myTranspo[i], "");
             }
 
-
-                /*for (int i = 0; i < ALPHABET.Length; ++i)
+            for (int i = 0; i < myKey.Length; ++i)
+            {
+                for (int j = i; j < cleartext.Length; j+=sizeKey)
                 {
-                    currentAlphaChar=ALPHABET[i];
-                    for (int j = 0; j < myKey.Length; ++j)
-                    {
-                        currentKeyChar = myKey[j];
-                        if (currentKeyChar.Equals(currentAlphaChar)&&(nbChar==0))
-                        {
-                            myTranspoSequence[j] = i;
-                            nbChar++;
-                        }
-                        else if (currentKeyChar.Equals(currentAlphaChar))
-                        {
-                            myTranspoSequence[j] = i+1;
-                        }
-                    }
-                }*/
-                //return myTranspoSequence;
+                    oldText = myTab[myTranspo[i]];
+                    myTab[myTranspo[i]] = oldText + cleartext[j]+"";
+                }
+            }
+            return myTab;
         }
-        /*
-        public static int findIndexOfKey(String myKey){
-            int index = -1;
-            
-            return index;
+
+        //To compute the cyphertext thanks to the tab of chars computed above.
+        //It takes the tab of chars and the key in input.
+        public String computeCyphertext(Dictionary<int, String> myTab)
+        {
+            int sizeOfKey = myKey.Length;
+            String cypherText = "";
+            for(int i = 0; i < sizeOfKey; ++i)
+            {
+                cypherText += myTab[i];
+            }
+
+            return cypherText;
         }
-         * */
 
-
-
-
+        //Encryption of the cleartext on input, with the key. Returns a String.
+        public String encrypt(){
+            this.cyphertext = "";
+            Dictionary<int, String> charTab = computeTab();
+            this.cyphertext = computeCyphertext(charTab);
+            return this.cyphertext;
+        }
     }
 }
