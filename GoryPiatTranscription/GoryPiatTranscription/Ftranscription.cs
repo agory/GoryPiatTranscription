@@ -28,11 +28,19 @@ namespace GoryPiatTranscription
 
         private void btValidationDecrypt_Click(object sender, EventArgs e)
         {
-            String pasword = tbPasswordDecrypt.Text;
-            String text = tbTextDecrypt.Text;
-            // TODO Decrypt(password,text)
-            Form fshow = new Fshow("tosqdgvqegdbgfsdgfzegvfgdhbgvqsdrfdcdswgbfwchbvdwv vnbfdsfdcds nxfdgfvfcxbwcxbgvfdwwdcxbdxwfcxvnbxwcqsgv");
-            fshow.Show();
+            if ((tbPasswordDecrypt.Text != "") && (tbTextDecrypt.Text != ""))
+            {
+                String key = tbPasswordDecrypt.Text;
+                String cypher = tbTextDecrypt.Text;
+                Transcription myTranscription = new Transcription(key);
+                String cleartext = myTranscription.decrypt(cypher);
+                Form fshow = new Fshow(cleartext);
+                fshow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Merci d'entrer un texte et une clé afin de procéder à l'encryptage");
+            }
 
         }
 
@@ -48,9 +56,8 @@ namespace GoryPiatTranscription
             {
                 String key = tbPasswordEncrypt.Text;
                 String cleartext = tbTextEncrypt.Text;
-                Transcription myTranscription = new Transcription(cleartext, key);
-                String cypher = myTranscription.encrypt();
-                // TODO ENCrypt(password,text)
+                Transcription myTranscription = new Transcription(key);
+                String cypher = myTranscription.encrypt(cleartext);
                 Form fshow = new Fshow(cypher);
                 fshow.Show();
             }
@@ -99,6 +106,9 @@ namespace GoryPiatTranscription
         {
             tbTextEncrypt.Text = "L’ISTIL DEVIENT UNE ECOLE POLYTECHNIQUE ";
             tbPasswordEncrypt.Text = "ISTIL";
+            tbTextDecrypt.Text = "LIV E TISDNELLHETET EYN ’LIUCPEQI ENOOCU";
+            tbPasswordDecrypt.Text = "ISTIL";
+            
         }
 
     }
