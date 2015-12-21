@@ -106,24 +106,26 @@ namespace Transposition
         private Dictionary<int, String> computeDecryptionTab()
         {
             Dictionary<int, String> myTab = new Dictionary<int, String>();
-            Dictionary<int, int> myTranspo = computeTranspoSequence();
+            Dictionary<int, int> myTranspo = computeTranspoSequenceInverse();
             int[] orderSequence = new int[0];
-            int addchar = cyphertext.Length % myKey.Length;
-            if(addchar > 0) { 
-            for (int i =0; i < addchar; i++) {
-                cyphertext += ' ';
-            }
-            }
-            int sizeTab = sizeTab = cyphertext.Length / myKey.Length;           
-            
+            int addchar = myKey.Length  - (cyphertext.Length % myKey.Length);
+            addchar = addchar == myKey.Length ? 0 : addchar;
+            int sizeTab = (cyphertext.Length + addchar) / myKey.Length;
             int index = 0;
             for (int i = 0; i < myTranspo.Count; i++)
             {
-                myTab.Add((int)myTranspo[index], "");
-                for (int i2 = i* sizeTab; (i2 < (i+1)*sizeTab && i2 < cyphertext.Length);i2++) {
-                    myTab[myTranspo[index]] += cyphertext[i2];
+                myTab.Add((int)myTranspo[i], "");                
+                for (int i2 = 0; i2 < sizeTab;i2++) {                
+                    if (addchar != 0 &&(i2+1 == sizeTab && (myTranspo[i] >= ((myKey.Length - addchar)))))
+                    {
+                        myTab[myTranspo[i]] += ' ';
+                        index--;
+                    }
+                    else {
+                        myTab[myTranspo[i]] += cyphertext[index + i2];
+                    }
                 }
-                index++;
+                index += sizeTab;
             }
             return myTab;
         }
@@ -131,15 +133,8 @@ namespace Transposition
         //It takes the tab of chars and the key in input.
         private String computeCleartext(Dictionary<int, String> myTab)
         {
-            int sizeTab = 0;
-            if (cyphertext.Length % myKey.Length == 0)
-            {
-                sizeTab = cyphertext.Length / myKey.Length;
-            }
-            else
-            {
-                sizeTab = (int)Math.Ceiling((decimal)(cyphertext.Length / myKey.Length)) + 1;
-            }
+
+            int sizeTab = myTab[0].Length;
             int sizeOfKey = myKey.Length;
             String clearText = "";
 
@@ -152,6 +147,15 @@ namespace Transposition
             }
             return clearText;
         }
+
+        private Dictionary<int, int> computeTranspoSequenceInverse() {
+            Dictionary<int, int> inverseTranspo = new Dictionary<int, int>();
+            foreach (KeyValuePair<int, int> value in computeTranspoSequence()) {
+                inverseTranspo.Add(value.Value, value.Key);
+            }
+            return inverseTranspo;
+        }
+
     }
 
 }

@@ -106,8 +106,8 @@ namespace GoryPiatTranscription
         {
             tbTextEncrypt.Text = "L’ISTIL DEVIENT UNE ECOLE POLYTECHNIQUE ";
             tbPasswordEncrypt.Text = "ISTIL";
-            tbTextDecrypt.Text = "LIV E TISDNELLHETET EYN ’LIUCPEQI ENOOCU";
-            tbPasswordDecrypt.Text = "ISTIL";
+            tbTextDecrypt.Text = "’D OYQIE PHL TCLIIEULTULNEONSVNEEETIE C ";
+            tbPasswordDecrypt.Text = "hamster";
             
         }
 
